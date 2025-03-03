@@ -1,6 +1,6 @@
 from lib.seed import session, Company, Dev, Freebie
 
-# Clear existing data (optional)
+# Clear existing data 
 session.query(Freebie).delete()
 session.query(Company).delete()
 session.query(Dev).delete()
@@ -42,7 +42,7 @@ print("\nDid Brian receive a Laptop?", dev1.received_one("Laptop"))
 # Transfer a Freebie
 freebie = session.query(Freebie).filter_by(item_name="Mouse").first()
 if dev1.give_out(dev2, freebie):
-    print("\nMouse transferred from Brian to Musa!")
+    print("\nMouse has been transferred from Brian to Musa!")
 
 # Show Companies Where Brian Got Freebies
 print("\nCompanies Brian got freebies from:")

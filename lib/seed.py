@@ -66,7 +66,7 @@ class Company(Base):
     name = Column(String, nullable=False)
     founding_year = Column(Integer, nullable=False)
 
-    # here we now explain the relationship to freebies and devs
+    # here we now explain the relationship of freebies and devs
     freebies = relationship("Freebie", back_populates="company", cascade="all, delete-orphan")
     devs = relationship("Dev", secondary=devs_companies, back_populates="companies")
     
